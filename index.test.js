@@ -25,5 +25,11 @@ describe('map method', ()=> {
       expect(newArr).toEqual(20)
 
     })
+    it('Takes an Array and callback of signature item => {} and returns an overall true value if all callback return true or a truthy value', ()=> {
+        const arr = [2,4,6,8];
+        const newArr = everyMethod(arr,(n)=> n % 2 === 0)
+      expect(newArr).toBeTruthy()
+
+    })
 
 })
