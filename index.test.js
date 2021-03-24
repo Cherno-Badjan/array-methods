@@ -1,4 +1,4 @@
-const { mapMethod,filterMethod,findMethod, reduceMethod } = require(".");
+const { mapMethod,filterMethod,findMethod, reduceMethod,everyMethod } = require(".");
 
 describe('map method', ()=> {
     it('takes an array and a callback of signature item => {} and creates a new array with the return value of each called callback', ()=> {
@@ -29,6 +29,12 @@ describe('map method', ()=> {
         const arr = [2,4,6,8];
         const newArr = everyMethod(arr,(n)=> n % 2 === 0)
       expect(newArr).toBeTruthy()
+
+    })
+    it('Takes an Array and callback of signature item => {} and returns an overall true value if all callback return true or a truthy value', ()=> {
+        const arr = [2,9,4,6,8,];
+        const newArr = everyMethod(arr,(n)=> n % 2 === 0)
+      expect(newArr).toBeFalsy()
 
     })
 

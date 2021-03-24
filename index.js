@@ -13,11 +13,8 @@ const filterMethod=(arr, callback)=> {
             }
             return filterArr;
     }
-const findMethod=(arr, callback)=> { 
-    let i = 0;
-
-    let arrLength = arr.length
-     for(let i=0;i<arr.length;i++) { 
+const findMethod=(arr, callback)=> {
+for(let i=0;i<arr.length;i++) { 
          if(callback(arr[i]) === true) return i;
     }; 
     return -1
@@ -25,12 +22,25 @@ const findMethod=(arr, callback)=> {
 
 const reduceMethod =(arr, callback, initialValue)=>{    
     let accumulator = initialValue === undefined ? 0 : initialValue     
-    for(let i=0;i<arr.length;i++)        accumulator = callback(accumulator, arr[i]);    
-    return accumulator;}
+    for(let i=0;i<arr.length;i++) 
+    accumulator = callback(accumulator, arr[i]);    
+    return accumulator;
+}
+
+const everyMethod=(arr, callback)=> { 
+      for(let i=0;i<arr.length;i++) { 
+             if(callback(arr[i])) {
+                 return true;
+        }
+    
+        return false;
+        }
+    }
 
 module.exports ={
     mapMethod,
     filterMethod,
     findMethod,
-    reduceMethod
+    reduceMethod,
+    everyMethod
 }
