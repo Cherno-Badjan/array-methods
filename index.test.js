@@ -20,7 +20,7 @@ describe('map method', ()=> {
     })
     it('Takes an Array and callback of signature (accumulator, item) => {} and an (optional) second initialValue parameter that is the initial value of the accumulator. After each function call, the return value is passed as the accumulator argument of the next function call', ()=> {
         const arr = [5,5,5,5];
-        const sum = (a,b)=>a+b;
+        const sum = (a,b,)=>a+b;
         const newArr = reduceMethod(arr,sum)
       expect(newArr).toEqual(20)
 
@@ -32,7 +32,7 @@ describe('map method', ()=> {
 
     })
     it('Takes an Array and callback of signature item => {} and returns an overall true value if all callback return true or a truthy value', ()=> {
-        const arr = [2,9,4,6,8,];
+        const arr = [2,9,4,6,8];
         const newArr = everyMethod(arr,(n)=> n % 2 === 0)
       expect(newArr).toBeFalsy()
 

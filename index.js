@@ -29,13 +29,12 @@ const reduceMethod =(arr, callback, initialValue)=>{
 
 const everyMethod=(arr, callback)=> { 
       for(let i=0;i<arr.length;i++) { 
-             if(callback(arr[i])) {
-                 return true;
-        }
-    
-        return false;
-        }
+             if(!callback(arr[i])) {
+             return false;
+             }
     }
+            return true
+}
 
 module.exports ={
     mapMethod,
