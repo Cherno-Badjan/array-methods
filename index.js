@@ -21,9 +21,18 @@ for(let i=0;i<arr.length;i++) {
 }
 
 const reduceMethod =(arr, callback, initialValue)=>{    
-    let accumulator = initialValue === undefined ? 0 : initialValue     
-    for(let i=0;i<arr.length;i++) 
-    accumulator = callback(accumulator, arr[i]);    
+    let accumulator = initialValue;
+    
+    if(initialValue === undefined) {
+        accumulator =arr[0];  
+    for(let i=1;i<arr.length;i++) {
+    accumulator = callback(accumulator, arr[i]);}
+    }  else {
+       accumulator = initialValue;
+        for (let i = 0; i<arr.length; i++) {
+            accumulator = callback(accumulator, arr[i])
+        }
+    }   
     return accumulator;
 }
 
